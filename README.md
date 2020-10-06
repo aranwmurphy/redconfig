@@ -31,7 +31,7 @@ const rconf = new RedConfig(redis, 'config::global');
 
 async function main() {
     const config = await rconf.load();
-    config.level = "info";
+    config.level = 'info';
     await rconf.save(config);
 }
 ```
