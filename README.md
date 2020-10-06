@@ -18,5 +18,39 @@ It correctly bundles the library in production mode and optimizes the build for 
 
 Lints the project files
 
+## Usage
+
+### JavaScript
+
+```javascript
+const Redis = require('ioredis');
+const { RedConfig } = require('redconfig');
+
+const client = new Redis();
+const rconf = new RedConfig(redis, 'config::global');
+
+async function main() {
+    const config = await rconf.load();
+    config.level = "info";
+    await rconf.save(config);
+}
+```
+
+### TypeScript
+
+```typescript
+import { Redis } from "ioredis";
+import { RedConfig, IRedConfig } from "redconfig";
+
+const client = new Redis();
+const rconf = new RedConfig(redis, "config::global");
+
+async function main() {
+    const config = await rconf.load();
+    config.level = "info";
+    await rconf.save(config);
+}
+```
+
 ## License
 MIT
