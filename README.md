@@ -27,7 +27,7 @@ const Redis = require('ioredis');
 const { RedConfig } = require('redconfig');
 
 const client = new Redis();
-const rconf = new RedConfig(redis, 'config::global');
+const rconf = new RedConfig(client, 'config::global');
 
 async function main() {
     let config = await rconf.load();
@@ -46,7 +46,7 @@ import Redis = require("redis");
 import { RedConfig, IRedConfig } from "redconfig";
 
 const client = new Redis();
-const rconf = new RedConfig(redis, "config::global");
+const rconf = new RedConfig(client, "config::global");
 
 async function main() {
     let config = await rconf.load();
