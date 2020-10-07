@@ -30,25 +30,29 @@ const client = new Redis();
 const rconf = new RedConfig(redis, 'config::global');
 
 async function main() {
-    const config = await rconf.load();
+    let config = await rconf.load();
     config.level = 'info';
-    await rconf.save(config);
+    config = await rconf.save(config);
+    console.log(config);
+    // { level: 'info', ... }
 }
 ```
 
 ### TypeScript
 
 ```typescript
-import { Redis } from "ioredis";
+import Redis = require("redis");
 import { RedConfig, IRedConfig } from "redconfig";
 
 const client = new Redis();
 const rconf = new RedConfig(redis, "config::global");
 
 async function main() {
-    const config = await rconf.load();
+    let config = await rconf.load();
     config.level = "info";
-    await rconf.save(config);
+    config = await rconf.save(config);
+    console.log(config);
+    // { level: 'info', ... }
 }
 ```
 
