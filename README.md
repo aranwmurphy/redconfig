@@ -31,6 +31,7 @@ const rconf = new RedConfig(redis, 'config::global');
 
 async function main() {
     let config = await rconf.load();
+    // { ... }
     config.level = 'info';
     config = await rconf.save(config);
     console.log(config);
@@ -49,6 +50,7 @@ const rconf = new RedConfig(redis, "config::global");
 
 async function main() {
     let config = await rconf.load();
+    // { ... }
     config.level = "info";
     config = await rconf.save(config);
     console.log(config);

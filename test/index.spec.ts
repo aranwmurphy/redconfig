@@ -1,4 +1,5 @@
 import Redis = require("ioredis");
+// tslint:disable-next-line: no-implicit-dependencies
 import { expect } from "chai";
 import { RedConfig } from "../src";
 
