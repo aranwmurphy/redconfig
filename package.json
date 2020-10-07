@@ -1,6 +1,6 @@
 {
   "name": "redconfig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Implementation of a distributed configuration using Redis",
   "scripts": {
     "build": "rm -rf lib/* && tsc",
