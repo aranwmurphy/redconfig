@@ -1,4 +1,4 @@
-# Redconfig
+# RedConfig
 Implementation of a distributed configuration using Redis, as described [here](https://redislabs.com/ebook/part-2-core-concepts/chapter-5-using-redis-for-application-support/5-4-service-discovery-and-configuration/5-4-1-using-redis-to-store-configuration-information/).
 
 ## Available Scripts
