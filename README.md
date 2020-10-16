@@ -11,7 +11,7 @@ Runs the library test suite, and reports the results of each test.
 
 ### `npm build`
 
-Builds the library for production to the `dist` folder.<br />
+Builds the library for production to the `lib` folder.<br />
 It correctly bundles the library in production mode and optimizes the build for the best performance.
 
 ### `npm lint`
