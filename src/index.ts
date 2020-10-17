@@ -1,21 +1,24 @@
 import { Redis } from "ioredis";
 
-export interface IRedConfig {
+// tslint:disable-next-line: no-empty-interface
+export interface IRedConfig {}
+
+export interface IEnvRedConfig {
     [key: string]: string;
 }
 
-export class RedConfig {
+export class RedConfig<TConfig extends IRedConfig = IEnvRedConfig> {
     constructor(
         public readonly client: Redis,
         public readonly name: string,
     ) {}
 
-    async save(config: IRedConfig): Promise<IRedConfig> {
+    public async save(config: TConfig): Promise<TConfig> {
         await this.client.set(this.name, JSON.stringify(config));
         return this.load();
     }
 
-    async load(): Promise<IRedConfig> {
+    public async load(): Promise<TConfig> {
         const json = await this.client.get(this.name);
         return JSON.parse(json || "{}");
     }
