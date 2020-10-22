@@ -19,7 +19,6 @@ export class RedConfig<TConfig extends IRedConfig = IEnvRedConfig> {
     }
 
     public async load(): Promise<TConfig> {
-        const json = await this.client.get(this.name);
-        return JSON.parse(json || "{}");
+        return JSON.parse((await this.client.get(this.name)) || "{}");
     }
 }
